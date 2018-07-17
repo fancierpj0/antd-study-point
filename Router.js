@@ -12,6 +12,8 @@ import Tabs from './pages/ui/Tabs';
 import Gallery from './pages/ui/Gallery';
 import Carousels from './pages/ui/Carousels';
 import NoMatch from './pages/NoMatch';
+import FormLogin from './pages/form/login';
+import FormRegister from './pages/form/register';
 import Test from "./Test";
 
 export default class Router extends React.Component {
@@ -32,6 +34,9 @@ export default class Router extends React.Component {
                 <Route path="/ui/tabs" component={Tabs}/>
                 <Route path="/ui/gallery" component={Gallery}/>
                 <Route path="/ui/carousels" component={Carousels}/>
+
+                <Route path="/form/login" component={FormLogin}/>
+                <Route path="/form/register" component={FormRegister}/>
                 <Route component={NoMatch}/>
               </Switch>
             </Admin>
