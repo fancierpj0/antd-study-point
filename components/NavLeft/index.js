@@ -26,6 +26,7 @@ export default class NavLeft extends React.Component {
           </SubMenu>
         );
       }
+      //Menu.Item的title属性是类似于alt属性的提醒小气泡，而SubMenu的title就是一行的显示
       return <Menu.Item title={item.title} key={item.key}><NavLink to={item.key}>{item.title}</NavLink></Menu.Item>
     });
   };

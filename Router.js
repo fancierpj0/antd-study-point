@@ -4,22 +4,39 @@ import App from './App';
 import Login from './pages/Login';
 import Admin from './Admin';
 import Buttons from './pages/ui/Buttons';
-import NoMatch from "./pages/NoMatch";
+import Modals from './pages/ui/Modals';
+import Loadings from './pages/ui/Loadings';
+import Notifications from './pages/ui/Notifications';
+import Messages from './pages/ui/Messages';
+import Tabs from './pages/ui/Tabs';
+import Gallery from './pages/ui/Gallery';
+import Carousels from './pages/ui/Carousels';
+import NoMatch from './pages/NoMatch';
+import Test from "./Test";
 
 export default class Router extends React.Component {
   render() {
+    console.log(Buttons);
     return (
       <HashRouter>
         <App>
-          <Route path='/login' component={Login}/>
-          <Route path='/admin' render={() => (
+          <Route path='/login' component={Login} exact/>
+          <Route path='/' render={() => (
             <Admin>
               <Switch>
-                <Route path='/admin/ui/buttons' component={Buttons}/>
-                <Route component={NoMatch}></Route>
+                <Route path="/ui/buttons" component={Buttons}/>
+                <Route path="/ui/modals" component={Modals}/>
+                <Route path="/ui/loadings" component={Loadings}/>
+                <Route path="/ui/notifications" component={Notifications}/>
+                <Route path="/ui/messages" component={Messages}/>
+                <Route path="/ui/tabs" component={Tabs}/>
+                <Route path="/ui/gallery" component={Gallery}/>
+                <Route path="/ui/carousels" component={Carousels}/>
+                <Route component={NoMatch}/>
               </Switch>
             </Admin>
           )}/>
+          <Route path="/test" component={Test} exact/>
         </App>
       </HashRouter>
     )
